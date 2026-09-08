@@ -1,0 +1,115 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --color-yahala-primary: #005F6B;
+  --color-yahala-secondary: #1A1A2E;
+  --color-yahala-accent: #C9A84C;
+  --color-yahala-surface: #F8F7F4;
+  --color-yahala-text-main: #1C1C1C;
+  --color-yahala-text-muted: #6B7280;
+  
+  --font-arabic-heading: 'IBM Plex Sans Arabic', sans-serif;
+  --font-arabic-body: 'IBM Plex Sans Arabic', sans-serif;
+  
+  --font-english-heading: 'IBM Plex Sans Arabic', sans-serif;
+  --font-english-body: 'IBM Plex Sans Arabic', sans-serif;
+
+  /* default backgrounds/foregrounds */
+  --background: var(--color-yahala-surface);
+  --foreground: var(--color-yahala-text-main);
+  --card: #ffffff;
+  --card-foreground: var(--color-yahala-text-main);
+  --popover: #ffffff;
+  --popover-foreground: var(--color-yahala-text-main);
+  --primary: var(--color-yahala-primary);
+  --primary-foreground: #ffffff;
+  --secondary: var(--color-yahala-secondary);
+  --secondary-foreground: #ffffff;
+  --muted: #e5e7eb;
+  --muted-foreground: var(--color-yahala-text-muted);
+  --accent: var(--color-yahala-accent);
+  --accent-foreground: #ffffff;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: rgba(0, 0, 0, 0.1);
+  --ring: var(--color-yahala-primary);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: var(--color-yahala-secondary);
+  --foreground: var(--color-yahala-surface);
+  --card: #141424;
+  --card-foreground: var(--color-yahala-surface);
+  --popover: #141424;
+  --popover-foreground: var(--color-yahala-surface);
+  --primary: var(--color-yahala-primary);
+  --primary-foreground: #ffffff;
+  --secondary: #2A2A4A;
+  --secondary-foreground: #ffffff;
+  --muted: #2A2A4A;
+  --muted-foreground: #9ca3af;
+  --accent: var(--color-yahala-accent);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: var(--color-yahala-primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --color-yahala-primary: var(--color-yahala-primary);
+  --color-yahala-secondary: var(--color-yahala-secondary);
+  --color-yahala-accent: var(--color-yahala-accent);
+  --color-yahala-surface: var(--color-yahala-surface);
+  
+  --font-ar-head: var(--font-arabic-heading);
+  --font-ar-body: var(--font-arabic-body);
+  --font-en-head: var(--font-english-heading);
+  --font-en-body: var(--font-english-body);
+}
+
+.font-ar-head { font-family: var(--font-arabic-heading); }
+.font-ar-body { font-family: var(--font-arabic-body); }
+.font-en-head { font-family: var(--font-english-heading); }
+.font-en-body { font-family: var(--font-english-body); }
+
+html[lang="ar"] {
+  font-family: var(--font-arabic-body);
+}
+html[lang="en"] {
+  font-family: var(--font-english-body);
+}
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] h5, html[lang="ar"] h6 {
+  font-family: var(--font-arabic-heading);
+}
+html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3, html[lang="en"] h4, html[lang="en"] h5, html[lang="en"] h6 {
+  font-family: var(--font-english-heading);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}

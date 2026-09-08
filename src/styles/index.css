@@ -1,0 +1,42 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Ya Hala Global Styles */
+:root {
+  --yh-teal: #005F6B;
+  --yh-navy: #1A1A2E;
+  --yh-gold: #C9A84C;
+  --yh-surface: #F8F7F4;
+}
+
+html[dir="rtl"] body {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+html[dir="ltr"] body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero slow zoom animation */
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* Custom scrollbar for admin dark sidebar */
+.dark-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.dark-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+}
