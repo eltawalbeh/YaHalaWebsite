@@ -10,6 +10,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { api } from "../lib/api";
 import { AnimatedCounter } from "../components/ui/AnimatedCounter";
 import { defaultServices } from "../content/services";
+import VideoHero from "../components/VideoHero";
 
 const HERO_IMAGE = "https://images.unsplash.com/photo-1714601344981-75e003bc5d18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBidWlsZGluZyUyMGlsbGFzJTIwcmVmbGVjdGlvbnxlbnwxfHx8fDE3NzMxODc2NzN8MA&ixlib=rb-4.1.0&q=80&w=1920";
 const DESERT_IMAGE = "https://images.unsplash.com/photo-1671398995061-63138e8344a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkZXNlcnQlMjBob3RlbCUyMHNhdWRpJTIwYXJhYmlhfGVufDF8fHx8MTc3MzE4NzY2OXww&ixlib=rb-4.1.0&q=80&w=900";
@@ -59,71 +60,8 @@ export default function HomePage() {
 
   return (
     <div className="bg-background">
-      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={HERO_IMAGE}
-            alt="Ya Hala Hero"
-            className="w-full h-full object-cover scale-105"
-            style={{ animation: "slowZoom 20s ease-in-out infinite alternate" }}
-          />
-          <div className="absolute inset-0 bg-secondary/80 backdrop-blur-[2px]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, var(--color-yahala-accent) 0, var(--color-yahala-accent) 1px, transparent 0, transparent 40px)", backgroundSize: "40px 40px" }} />
-        </div>
-
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-0.5 bg-accent" />
-                <span className={`text-accent text-sm font-semibold tracking-widest uppercase font-en-body`}>
-                  {t("يا هلا للسفر والسياحة", "Ya Hala Travel & Tourism")}
-                </span>
-              </div>
-              <h1 className={`text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] ${fontHead}`}>
-                {t("شريككم في السفر", "Your Partner in")} <br/>
-                <span className="text-accent">{t("الاحترافي", "Professional Travel")}</span>
-              </h1>
-              <p className={`text-white/80 text-lg sm:text-xl mb-12 leading-relaxed max-w-2xl ${fontBody}`}>
-                {t(
-                  "نقدم حلول سفر متكاملة للشركات والمؤسسات في المملكة العربية السعودية والخليج بمقاييس عالمية.",
-                  "We provide integrated travel solutions for corporations and institutions across Saudi Arabia and the Gulf with global standards."
-                )}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/quote"
-                  className={`bg-accent hover:bg-[#b8943d] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-accent/30 text-base ${fontBody}`}
-                >
-                  {t("طلب عرض أسعار", "Request a Quote")}
-                </Link>
-                <Link
-                  to="/services"
-                  className={`border border-white/40 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 text-base hover:bg-white/10 ${fontBody}`}
-                >
-                  {t("استكشف خدماتنا", "Explore Services")}
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 hidden md:block">
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="text-white/50"
-          >
-            <ArrowDown className="w-6 h-6" />
-          </motion.div>
-        </div>
-      </section>
+      {/* ─── VIDEO HERO ───────────────────────────────────────────────────── */}
+      <VideoHero />
 
       {/* ─── STATS BAR ────────────────────────────────────────────────────── */}
       <section ref={statsReveal.ref} className="bg-primary py-16 relative overflow-hidden border-y border-primary-foreground/10">
