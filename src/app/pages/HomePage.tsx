@@ -369,9 +369,22 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
-            {["Visa", "Mastercard", "Mada", "Apple Pay", "STC Pay", "Bank Transfer"].map((method) => (
-              <div key={method} className="bg-background border border-border rounded-xl px-6 py-4 flex items-center justify-center min-w-[130px] hover:border-primary/50 hover:shadow-md transition-all duration-300">
-                <span className="font-bold text-foreground text-sm tracking-wide font-en-body">{method}</span>
+            {[
+              { key: "visa", labelAr: "فيزا", labelEn: "Visa", src: "/payment-methods/visa.svg" },
+              { key: "mastercard", labelAr: "ماستركارد", labelEn: "Mastercard", src: "/payment-methods/mastercard.svg" },
+              { key: "mada", labelAr: "مدى", labelEn: "Mada", src: "/payment-methods/mada.svg" },
+              { key: "apple-pay", labelAr: "Apple Pay", labelEn: "Apple Pay", src: "/payment-methods/apple-pay.svg" },
+              { key: "stc-pay", labelAr: "STC Pay", labelEn: "STC Pay", src: "/payment-methods/stc-pay.svg" },
+              { key: "bank-transfer", labelAr: "تحويل بنكي", labelEn: "Bank Transfer", src: "/payment-methods/bank-transfer.svg" },
+              { key: "moyasar", labelAr: "ميسر", labelEn: "Moyasar", src: "/payment-methods/moyasar.svg" },
+            ].map((method) => (
+              <div key={method.key} className="bg-background border border-border rounded-xl px-6 py-4 flex items-center justify-center min-w-[168px] hover:border-primary/50 hover:shadow-md transition-all duration-300">
+                <img
+                  src={method.src}
+                  alt={isAr ? method.labelAr : method.labelEn}
+                  className="h-10 w-[120px] object-contain"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
