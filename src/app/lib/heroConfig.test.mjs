@@ -15,8 +15,9 @@ test("event hero configuration is date-bounded and falls back to video", () => {
 });
 
 test("event hero uses local fallback video assets and the approved email CTA", () => {
-  assert.match(eventHero, /\/events\/saudind-hero\.webm/);
-  assert.match(eventHero, /\/events\/saudind-hero\.mp4/);
+  assert.match(eventHero, /cdn\.jsdelivr\.net\/gh\/eltawalbeh\/YaHalaWebsite@/);
+  assert.match(eventHero, /public\/events\/saudind-hero\.webm/);
+  assert.match(eventHero, /public\/events\/saudind-hero\.mp4/);
   assert.match(eventHero, /info@yahala\.co/);
   assert.match(eventHero, /عزنا في طبعنا/);
   assert.match(eventHero, /Our Pride Lies in Our Nature/);

@@ -1,8 +1,8 @@
 import { motion, useReducedMotion } from "motion/react";
 import { useLanguage } from "../context/LanguageContext";
 
-const EVENT_MP4 = "/events/saudind-hero.mp4";
-const EVENT_WEBM = "/events/saudind-hero.webm";
+const EVENT_MP4 = "https://cdn.jsdelivr.net/gh/eltawalbeh/YaHalaWebsite@e5b0138517204b2061a23c62941db585afb9a0ef/public/events/saudind-hero.mp4";
+const EVENT_WEBM = "https://cdn.jsdelivr.net/gh/eltawalbeh/YaHalaWebsite@e5b0138517204b2061a23c62941db585afb9a0ef/public/events/saudind-hero.webm";
 const EVENT_EMAIL = "info@yahala.co";
 
 export default function EventHero() {
