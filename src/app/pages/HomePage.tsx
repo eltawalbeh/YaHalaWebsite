@@ -370,13 +370,13 @@ export default function HomePage() {
 
           <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
             {[
-              { key: "visa", labelAr: "فيزا", labelEn: "Visa", src: "/payment-methods/visa.svg" },
-              { key: "mastercard", labelAr: "ماستركارد", labelEn: "Mastercard", src: "/payment-methods/mastercard.svg" },
-              { key: "mada", labelAr: "مدى", labelEn: "Mada", src: "/payment-methods/mada.svg" },
-              { key: "apple-pay", labelAr: "Apple Pay", labelEn: "Apple Pay", src: "/payment-methods/apple-pay.svg" },
-              { key: "stc-pay", labelAr: "STC Pay", labelEn: "STC Pay", src: "/payment-methods/stc-pay.svg" },
-              { key: "bank-transfer", labelAr: "تحويل بنكي", labelEn: "Bank Transfer", src: "/payment-methods/bank-transfer.svg" },
-              { key: "moyasar", labelAr: "ميسر", labelEn: "Moyasar", src: "/payment-methods/moyasar.svg" },
+              { key: "visa", labelAr: "فيزا", labelEn: "Visa", src: "https://cdn.jsdelivr.net/gh/eltawalbeh/YaHalaWebsite@2e7e08380b1c40d4cbafe34a2f7911e457129cbb/public/payment-methods/visa.svg" },
+              { key: "mastercard", labelAr: "ماستركارد", labelEn: "Mastercard", src: "https://cdn.jsdelivr.net/gh/eltawalbeh/YaHalaWebsite@2e7e08380b1c40d4cbafe34a2f7911e457129cbb/public/payment-methods/mastercard.svg" },
+              { key: "mada", labelAr: "مدى", labelEn: "Mada", src: "https://cdn.jsdelivr.net/gh/eltawalbeh/YaHalaWebsite@2e7e08380b1c40d4cbafe34a2f7911e457129cbb/public/payment-methods/mada.svg" },
+              { key: "apple-pay", labelAr: "Apple Pay", labelEn: "Apple Pay", src: "https://cdn.jsdelivr.net/gh/eltawalbeh/YaHalaWebsite@2e7e08380b1c40d4cbafe34a2f7911e457129cbb/public/payment-methods/apple-pay.svg" },
+              { key: "stc-pay", labelAr: "STC Pay", labelEn: "STC Pay", src: "https://cdn.jsdelivr.net/gh/eltawalbeh/YaHalaWebsite@2e7e08380b1c40d4cbafe34a2f7911e457129cbb/public/payment-methods/stc-pay.svg" },
+              { key: "bank-transfer", labelAr: "تحويل بنكي", labelEn: "Bank Transfer", src: "https://cdn.jsdelivr.net/gh/eltawalbeh/YaHalaWebsite@2e7e08380b1c40d4cbafe34a2f7911e457129cbb/public/payment-methods/bank-transfer.svg" },
+              { key: "moyasar", labelAr: "ميسر", labelEn: "Moyasar", src: "https://cdn.jsdelivr.net/gh/eltawalbeh/YaHalaWebsite@2e7e08380b1c40d4cbafe34a2f7911e457129cbb/public/payment-methods/moyasar.svg" },
             ].map((method) => (
               <div key={method.key} className="bg-background border border-border rounded-xl px-6 py-4 flex items-center justify-center min-w-[168px] hover:border-primary/50 hover:shadow-md transition-all duration-300">
                 <img
