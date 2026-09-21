@@ -11,6 +11,8 @@ import { api } from "../lib/api";
 import { AnimatedCounter } from "../components/ui/AnimatedCounter";
 import { defaultServices } from "../content/services";
 import VideoHero from "../components/VideoHero";
+import EventHero from "../components/EventHero";
+import { getActiveHeroMode } from "../lib/heroConfig";
 
 const HERO_IMAGE = "https://images.unsplash.com/photo-1714601344981-75e003bc5d18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBidWlsZGluZyUyMGlsbGFzJTIwcmVmbGVjdGlvbnxlbnwxfHx8fDE3NzMxODc2NzN8MA&ixlib=rb-4.1.0&q=80&w=1920";
 const DESERT_IMAGE = "https://images.unsplash.com/photo-1671398995061-63138e8344a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkZXNlcnQlMjBob3RlbCUyMHNhdWRpJTIwYXJhYmlhfGVufDF8fHx8MTc3MzE4NzY2OXww&ixlib=rb-4.1.0&q=80&w=900";
@@ -60,8 +62,8 @@ export default function HomePage() {
 
   return (
     <div className="bg-background">
-      {/* ─── VIDEO HERO ───────────────────────────────────────────────────── */}
-      <VideoHero />
+      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
+      {getActiveHeroMode() === "event" ? <EventHero /> : <VideoHero />}
 
       {/* ─── STATS BAR ────────────────────────────────────────────────────── */}
       <section ref={statsReveal.ref} className="bg-primary py-16 relative overflow-hidden border-y border-primary-foreground/10">
@@ -227,7 +229,7 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent opacity-90" />
                   <div className="absolute inset-0 border border-white/10 group-hover:border-accent rounded-3xl transition-all duration-300" />
-                  
+
                   <div className="absolute bottom-0 inset-x-0 p-8 transform transition-transform duration-300 group-hover:-translate-y-2">
                     <h3 className={`text-white font-bold text-2xl mb-2 ${fontHead}`}>
                       {isAr ? service.name_ar : service.name_en}
@@ -244,7 +246,7 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
-          
+
           <div className="mt-10 text-center md:hidden">
             <Link
               to="/services"
